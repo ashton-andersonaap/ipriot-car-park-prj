@@ -12,3 +12,4 @@ class EntrySensor(Sensor):
 
 class ExitSensor(Sensor):
     pass
+
