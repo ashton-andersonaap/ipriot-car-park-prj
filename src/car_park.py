@@ -9,4 +9,3 @@ class Carpark:
     def __str__(self):
         return f"Car Park at {self.location} with {self.capacity} bays."
 
-    
