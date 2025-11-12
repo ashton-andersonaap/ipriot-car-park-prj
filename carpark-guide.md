@@ -469,26 +469,26 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
+
 ![Added methods to the car park class](screenshots/methods-to-car-park.png)
-```
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - *The number of available bays*
->      `Answer here...`
+>      `Carpark`
 >    - *The current temperature*
->      `Answer here...`
+>      `carpark`
 >    - *The time*
->      `Answer here...`
+>      `carpark`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `A property is a method that gets treated as an attribute & cannot be set, while an attribute is a value that can be set `
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `We use a dictionary so that we can hold all the data as one variable. The advantage of this is that it is easily accessed across our classes. A disadvantage of this is that the formatting of our data is predetermined. `
 
 #### 2.7.5. Add a detect vehicle method to the Sensor class
 
