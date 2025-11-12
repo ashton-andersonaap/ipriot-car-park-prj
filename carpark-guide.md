@@ -90,11 +90,11 @@ git push -u origin feature/mvp
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| Class Name | Attributes                                         | Methods                                           |
+| ---------- |----------------------------------------------------|---------------------------------------------------|
+| `CarPark`    | available bays<br/>unavailable bays<br/>total bays | bay filled<br/>bay emptied<br/>bays status        |
+| `Sensor`     | licence plate<br/>time entered                     | car entered<br/>car exit<br/>                     |
+| `Display`    | weather <br/>announcements                         | show weather<br/>show announcements<br/>show bays |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
