@@ -3,9 +3,9 @@ from display import Display
 class CarPark:
 
 
-    def __init__(self, location, capacity, plates=None, displays = None, sensors = None):
-        self.location = location
-        self.capacity = int(capacity)
+    def __init__(self, location=None, capacity=None, plates=None, displays = None, sensors = None):
+        self.location = location if location is not None else ""
+        self.capacity = int(capacity) if capacity is not None else 0
         self.plates = plates if plates is not None else []
         self.displays = displays if displays is not None else []
         self.sensors = sensors if sensors is not None else []
@@ -32,10 +32,9 @@ class CarPark:
 
     @property
     def available_bays(self):
-        if (len(self.plates)>(self.capacity)):
+        if self.capacity <= 0:
             return 0
-        else:
-            return self.capacity - len(self.plates)
+        return max(self.capacity - len(self.plates), 0)
 
     def update_displays(self):
         data = {"available_bays": self.available_bays, "temperature": 25}
