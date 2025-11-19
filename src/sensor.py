@@ -8,24 +8,27 @@ class Sensor(ABC):
 
     def __str__(self):
         return f"Sensor {self.id} {self.is_active}"
-    def _scan_plate(self):
-        return random.choice(self.car_park.plates)
+
 
     @abstractmethod
     def update_car_park(self, plate):
         pass
 
+    @abstractmethod
     def _scan_plate(self):
-        return "FAKE-" +format(random.randint(0,999), "03d")
+        pass
 
     def detect_vehicle(self):
         plate = self._scan_plate()
-        self.update_car_park(plate)
+        if plate:
+            self.update_car_park(plate)
         return plate
 
 
 
 class EntrySensor(Sensor):
+    def _scan_plate(self):
+        return "FAKE-" +format(random.randint(0,999), "03d")
 
     def update_car_park(self, plate):
         self.car_park.add_car(plate)
@@ -33,7 +36,10 @@ class EntrySensor(Sensor):
 
 
 class ExitSensor(Sensor):
+    def _scan_plate(self):
+        return random.choice(self.car_park.plates)
     def update_car_park(self, plate):
-        self.car_park.add_car(plate)
-        print(f"Outgoing vehicle detected. Plate: {plate}")
+        if plate in self.car_park.plates:
+            self.car_park.remove_car(plate)
+            print(f"Outgoing vehicle detected. Plate: {plate}")
 
