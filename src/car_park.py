@@ -1,11 +1,11 @@
 from sensor import Sensor
 from display import Display
-class Carpark:
+class CarPark:
 
 
-    def __init__(self, capacity, location, plates=None, displays = None, sensors = None):
+    def __init__(self, location, capacity, plates=None, displays = None, sensors = None):
         self.location = location
-        self.capacity = capacity
+        self.capacity = int(capacity)
         self.plates = plates if plates is not None else []
         self.displays = displays if displays is not None else []
         self.sensors = sensors if sensors is not None else []
@@ -37,7 +37,7 @@ class Carpark:
         else:
             return self.capacity - len(self.plates)
 
-    def update_dipslays(self):
+    def update_displays(self):
         data = {"available_bays": self.available_bays, "temperature": 25}
         for display in self.displays:
             display.update(data)
